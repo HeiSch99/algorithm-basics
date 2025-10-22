@@ -16,10 +16,6 @@ def parse_data(xml_file):
         sales.append((product, price))
     return sales
 
-def top_n_sales(sales_dict, n = 3):
-    """Return top N products by total sales."""
-    return nlargest(n, sales_dict.items(), key = lambda x: x[1])
-
 def sort_sales(sales_dict, descending = True):
     """Return all products sorted by total sales."""
     return sorted(sales_dict.items(), key = lambda x: x[1], reverse = descending)
@@ -108,14 +104,14 @@ if __name__ == "__main__":
         ds = HashTable()
         mode = "Hash Table"
 
-    print(f"\nUsing: {mode}\n")
+    print(f"\nUsing: {mode}")
 
     # Insert all sales
     for product, price in sales:
             ds.insert(product, price)
 
     # Query 1: Search by product name
-    print("[First Query]: Search by product name")
+    print("\n[First  Query]: Search by product name")
     product_name = "Oranges"
     result = ds.search(product_name)
     if result is not None:
