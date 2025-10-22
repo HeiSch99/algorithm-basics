@@ -1,0 +1,10 @@
+<!-- XML file containing data about product sales in a supermarket -->
+
+<sales>
+    <sale product="Bread" price="5"/>
+    <sale product="Beef" price="20"/>
+    <sale product="Eggs" price="10"/>
+    <sale product="Cabbage" price="3"/>
+    <sale product="Milk" price="6"/>
+    <sale product="Oranges" price="15"/>
+</sales>
