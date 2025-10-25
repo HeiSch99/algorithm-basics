@@ -1,9 +1,8 @@
 import xml.etree.ElementTree as ET
 from heapq import nlargest
 
-# ---------- Helper Functions ---------- #
+# ---------- Function for parsing an XML file ---------- #
 
-# Parsing an XML file
 def parse_data(xml_file):
     """Parse an XML file and return list of (product, price) records."""
     tree = ET.parse(xml_file)
@@ -15,10 +14,6 @@ def parse_data(xml_file):
         price = float(sale.get('price'))
         sales.append((product, price))
     return sales
-
-def sort_sales(sales_dict, descending = True):
-    """Return all products sorted by total sales."""
-    return sorted(sales_dict.items(), key = lambda x: x[1], reverse = descending)
 
 # ---------- Data implementation as a linked list ---------- #
 
@@ -78,7 +73,13 @@ class HashTable:
     def all_sales(self):
         """Returns dictionary of all product sales."""
         return self.table
-    
+
+# ---------- Function for sorting query in descending order ---------- #
+
+def sort_sales(sales_dict, descending = True):
+    """Return all products sorted by total sales."""
+    return sorted(sales_dict.items(), key = lambda x: x[1], reverse = descending)
+
 # ---------- Usage ---------- #
 if __name__ == "__main__":
     # XML file example
